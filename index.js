@@ -41,20 +41,23 @@ class Character {
         const result = Math.floor(Math.random()*20) +1+mod;
         console.log(`${this.name} rolled a ${result}.`)
     }
+    static MAX_HEALTH(){
+        this.health =100
+    }
 }
 
-const robin = new Character("Robin");
-robin.inventory = ['sword', 'potion', 'artifact'];
-robin.companion = new Character("Leo");
-robin.companion.type= "Cat";
-robin.companion.companion = new Character('Frank');
-robin.companion.companion.type='Flea';
-robin.companion.companion.inventory = ['small hat', 'sunglasses'];
+// const robin = new Character("Robin");
+// robin.inventory = ['sword', 'potion', 'artifact'];
+// robin.companion = new Character("Leo");
+// robin.companion.type= "Cat";
+// robin.companion.companion = new Character('Frank');
+// robin.companion.companion.type='Flea';
+// robin.companion.companion.inventory = ['small hat', 'sunglasses'];
 
-console.log(robin);
-robin.roll();
-robin.companion.roll();
-robin.companion.companion.roll();
+// console.log(robin);
+// robin.roll();
+// robin.companion.roll();
+// robin.companion.companion.roll();
 
 class Adventurer extends Character {
     constructor(name, role){
@@ -77,4 +80,18 @@ class Adventurer extends Character {
         }
         console.log(`${this.name} now has ${this.health}`);
     }
+    static ROLES(role){
+        role=['Fighter', 'Healer', 'Wizard'];
+    }
 }
+
+class companion extends Character {
+    constructor(name) {
+        super(name)
+        this.inventory.push('map', 'backpack', 'compass')
+    }
+    lost(){
+        console.log(`${this.name} hands you the map and the compass so you can find your way.`)
+    }
+}
+
