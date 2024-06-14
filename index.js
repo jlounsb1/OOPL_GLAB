@@ -80,6 +80,15 @@ class Adventurer extends Character {
         }
         console.log(`${this.name} now has ${this.health}`);
     }
+    duel(Adventurer) {
+        super.roll();
+        Adventurer.roll();
+    //     while(){
+
+    //     }
+
+    //  return health
+    }
     static ROLES(role){
         role=['Fighter', 'Healer', 'Wizard'];
         if(role != 'Fighter'||'Healer'||'Wizard'){console.log(`please choose one of the three classes: Fighter, Healer, Wizard`)}
@@ -130,3 +139,7 @@ class AdventurerFactory {
 
   console.log(wizards)
   console.log(wizards.adventurers[0].inventory)
+// console.log(AdventurerFactory)
+
+//    console.log(robin.duel(greg))
+console.log(Adventurer)
