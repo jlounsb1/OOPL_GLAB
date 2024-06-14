@@ -82,6 +82,7 @@ class Adventurer extends Character {
     }
     static ROLES(role){
         role=['Fighter', 'Healer', 'Wizard'];
+        if(role != 'Fighter'||'Healer'||'Wizard'){console.log(`please choose one of the three classes: Fighter, Healer, Wizard`)}
     }
 }
 
