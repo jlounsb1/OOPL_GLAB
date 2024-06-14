@@ -30,3 +30,11 @@ for(let i=0; i<adventurer.inventory.length;i++) {
 adventurer.roll();
 adventurer.roll();
 adventurer.roll();
+
+class Character {
+    constructor(name) {
+        this.name;
+        this.health =100;
+        this.inventory =[];
+    }
+}
