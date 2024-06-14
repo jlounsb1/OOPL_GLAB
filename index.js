@@ -35,7 +35,7 @@ class Character {
         this.name=name;
         this.health =100;
         this.inventory =[];
-        this.companion=this.companion;
+        
     }
     roll (mod=0) {
         const result = Math.floor(Math.random()*20) +1+mod;
