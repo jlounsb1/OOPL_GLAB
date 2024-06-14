@@ -56,4 +56,25 @@ robin.roll();
 robin.companion.roll();
 robin.companion.companion.roll();
 
-
+class Adventurer extends Character {
+    constructor(name, role){
+        super(name);
+        this.role=role;
+        this.mana =100;
+        this.healthPotion =4;
+        this.inventory.push('bedroll', '50 gold coins');
+    }
+    scout(){
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+    drinkPotion(){
+        if(this.health<25) {
+            if(this.healthPotion>0){
+                this.healthPotion =this.healthPotion-1;
+                this.health=100;
+            }
+        }
+        console.log(`${this.name} now has ${this.health}`);
+    }
+}
