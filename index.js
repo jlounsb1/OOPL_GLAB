@@ -115,5 +115,18 @@ class AdventurerFactory {
   
   const healers = new AdventurerFactory("Healer");
   const robin = healers.generate("Robin");
+
+  const fighters = new AdventurerFactory("Fighter");
+  const greg =fighters.generate("Greg");
+
+  const wizards = new AdventurerFactory("Wizard");
+  const karen = wizards.generate("Karen");
+
   console.log(healers)
   console.log(healers.adventurers[0].inventory)
+
+  console.log(fighters)
+  console.log(fighters.adventurers[0].inventory)
+
+  console.log(wizards)
+  console.log(wizards.adventurers[0].inventory)
