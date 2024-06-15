@@ -81,13 +81,23 @@ class Adventurer extends Character {
         console.log(`${this.name} now has ${this.health}`);
     }
     duel(Adventurer) {
-        super.roll();
-        Adventurer.roll();
-    //     while(){
-
-    //     }
-
-    //  return health
+        let superRoll = super.roll();
+        let AdventurerRoll = Adventurer.roll();
+        
+        while(Adventurer.health &&super.health >50){
+            superRoll = super.roll();
+            AdventurerRoll =Adventurer.roll();
+            if(superRoll>AdventurerRoll){
+                Adventurer.health= Adventurer.health-1
+            } else super.health= super.health -1;
+        }
+        if(Adventurer.health>super.health){
+            console.log(`${Adventurer.name} won the duel, now their health is ${Adventurer.health}.`) 
+            return Adventurer.health
+        } else{
+            console.log(`${super.name} won the duel, now their health is ${super.health}.`) 
+            return super.health
+        }
     }
     static ROLES(role){
         role=['Fighter', 'Healer', 'Wizard'];
@@ -141,5 +151,6 @@ class AdventurerFactory {
   console.log(wizards.adventurers[0].inventory)
 // console.log(AdventurerFactory)
 
-//    console.log(robin.duel(greg))
-console.log(Adventurer)
+// console.log(robin.duel(greg))
+
+greg.duel(robin)
