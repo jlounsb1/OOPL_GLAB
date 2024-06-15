@@ -149,8 +149,5 @@ class AdventurerFactory {
 
   console.log(wizards)
   console.log(wizards.adventurers[0].inventory)
-// console.log(AdventurerFactory)
 
-// console.log(robin.duel(greg))
-
-greg.duel(robin)
+//when i run either the roll method, or the duel method I am getting an error saying they are not functions...
