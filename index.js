@@ -81,22 +81,21 @@ class Adventurer extends Character {
         console.log(`${this.name} now has ${this.health}`);
     }
     duel(Adventurer) {
-        let superRoll = super.roll();
-        let AdventurerRoll = Adventurer.roll();
-        
-        while(Adventurer.health &&super.health >50){
-            superRoll = super.roll();
-            AdventurerRoll =Adventurer.roll();
+        // let superRoll = this.super.roll();
+        // let AdventurerRoll = Adventurer.super.roll();
+        while(Adventurer.health &&this.health >50){
+            let superRoll = this.super.roll();
+            let AdventurerRoll =Adventurer.super.roll();
             if(superRoll>AdventurerRoll){
-                Adventurer.health= Adventurer.health-1
-            } else super.health= super.health -1;
+                Adventurer.health-=1;
+            } else this.health-=1;
         }
-        if(Adventurer.health>super.health){
-            console.log(`${Adventurer.name} won the duel, now their health is ${Adventurer.health}.`) 
+        if(Adventurer.health>this.health){
+            console.log(`${Adventurer.name} won the duel.`) 
             return Adventurer.health
         } else{
-            console.log(`${super.name} won the duel, now their health is ${super.health}.`) 
-            return super.health
+            console.log(`${this.name} won the duel.`) 
+            return this.health
         }
     }
     static ROLES(role){
@@ -151,3 +150,6 @@ class AdventurerFactory {
   console.log(wizards.adventurers[0].inventory)
 
 //when i run either the roll method, or the duel method I am getting an error saying they are not functions...
+// console.log(robin)
+// console.log(healers.adventurers[0])
+healers.adventurers[0].duel(wizards.adventurers[0])
