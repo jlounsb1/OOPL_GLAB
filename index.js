@@ -84,16 +84,18 @@ class Adventurer extends Character {
         // let superRoll = this.super.roll();
         // let AdventurerRoll = Adventurer.super.roll();
         while(Adventurer.health &&this.health >50){
-            let superRoll = this.super.roll();
-            let AdventurerRoll =Adventurer.super.roll();
+            let superRoll = this.roll();
+            let AdventurerRoll =Adventurer.roll();
             if(superRoll>AdventurerRoll){
                 Adventurer.health-=1;
             } else this.health-=1;
         }
         if(Adventurer.health>this.health){
+            
             console.log(`${Adventurer.name} won the duel.`) 
             return Adventurer.health
         } else{
+            console.log(Adventurer.health, this.health)
             console.log(`${this.name} won the duel.`) 
             return this.health
         }
