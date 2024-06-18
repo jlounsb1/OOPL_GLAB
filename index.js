@@ -40,6 +40,7 @@ class Character {
     roll (mod=0) {
         const result = Math.floor(Math.random()*20) +1+mod;
         console.log(`${this.name} rolled a ${result}.`)
+        return result
     }
     static MAX_HEALTH(){
         this.health =100
@@ -81,22 +82,26 @@ class Adventurer extends Character {
         console.log(`${this.name} now has ${this.health}`);
     }
     duel(Adventurer) {
-        // let superRoll = this.super.roll();
-        // let AdventurerRoll = Adventurer.super.roll();
+        //Jourdann helped me after class with pointing to the right places as well here
         while(Adventurer.health &&this.health >50){
             let superRoll = this.roll();
             let AdventurerRoll =Adventurer.roll();
             if(superRoll>AdventurerRoll){
                 Adventurer.health-=1;
-            } else this.health-=1;
+                console.log(`${this.name}: ${this.health}. ${Adventurer.name}: ${Adventurer.health}`)
+            } else {this.health-=1;
+                console.log(`${this.name}: ${this.health}. ${Adventurer.name}: ${Adventurer.health}`)
+            }
+            
         }
+        console.log(Adventurer.health, this.health)
         if(Adventurer.health>this.health){
             
-            console.log(`${Adventurer.name} won the duel.`) 
+            console.log(`${Adventurer.name} won the duel. Their Health is now: ${Adventurer.health}. ${this.name} health is now ${this.health}`) 
             return Adventurer.health
         } else{
             console.log(Adventurer.health, this.health)
-            console.log(`${this.name} won the duel.`) 
+            console.log(`${this.name} won the duel. Their Health is now: ${this.health}. ${Adventurer.name} health is now ${Adventurer.health}.`) 
             return this.health
         }
     }
